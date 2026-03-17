@@ -160,7 +160,7 @@ class EpisodicMemory(BaseMemory):
         time_range: Optional[Tuple[datetime, datetime]] = kwargs.get("time_range")
         importance_threshold: Optional[float] = kwargs.get("importance_threshold")
 
-        # 结构化过滤候选（来自权威库）
+        # 结构化过滤候选（来自权威库），指定时间范围内的记忆
         candidate_ids: Optional[set] = None
         if time_range is not None or importance_threshold is not None:
             start_ts = int(time_range[0].timestamp()) if time_range else None
